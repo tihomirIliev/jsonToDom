@@ -44,23 +44,26 @@
             },
         }
     };
+    
+    //
     let meta = jsonData.meta;
     let elements = Object.keys(meta);
-    debugger
     let desFields = document.getElementsByClassName('description')
     let inputField = document.getElementsByClassName('inputField')
 
-
+    //adding the description of the elements
     elements.forEach(function(el, i){
         desFields[i].appendChild(document.createTextNode(meta[el].description))
     })
 
+    //main function 
     function manageValues(action){
         action = this.id
         let updatedProps = {}
         let tempProps = [];
         let metaQuestions = Object.keys(jsonData.meta)
 
+        //the below code generates the values of the props object according the button clicked 
         switch(action){
             case 'save_btn':
                 tempProps.push(document.getElementById('styling').value)
@@ -112,23 +115,26 @@
             }
         })
         
+        //showing the new values of props on screen 
         generateNewTable(updatedProps)
 
         console.log(updatedProps);
         return updatedProps
     };
 
+    //defined function for displaying new props on screen
     function generateNewTable(tdata){
         let newDiv = document.createElement('div')
         let table = document.createElement('table')
         let tbody = document.createElement('tbody')
         let props = Object.keys(tdata)
 
-
+        //hide previous table upon showing new
         if(document.getElementsByClassName('result_screen').length > 0){
             document.getElementById('container').removeChild(document.getElementsByClassName('result_screen')[0])
         }
         
+        //
         let thead = document.createElement('thead')
         thead.appendChild(document.createTextNode('Updated properties'))
         table.appendChild(thead)
