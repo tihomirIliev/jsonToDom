@@ -45,8 +45,25 @@
         }
     };
     
-    //
+    // setting the initial values to default
+    
     let meta = jsonData.meta;
+    
+    function defaultValues(){
+        let valuesArr = [];
+        let defaultVaules = Object.keys(meta).map(el=>meta[el].defaultValue)
+        defaultVaules.forEach(x=>valuesArr.push(x))
+
+        document.getElementById('styling').value = defaultVaules[0]
+        document.getElementById('openTermsInCustomLightbox').checked = eval(defaultVaules[1])
+        document.getElementById('radio2').checked = defaultVaules[2]
+        document.getElementById('promoCodeSize').value = defaultVaules[3]
+
+        return valuesArr
+    };
+    
+    defaultValues()
+    //
     let elements = Object.keys(meta);
     let desFields = document.getElementsByClassName('description')
     let inputField = document.getElementsByClassName('inputField')
@@ -83,15 +100,7 @@
                 tempProps.push(document.getElementById('promoCodeSize').value)
             break;
             case 'default_btn':
-                let defaultVaules = Object.keys(meta).map(el=>meta[el].defaultValue)
-
-                defaultVaules.forEach(x=>tempProps.push(x))
-                
-                document.getElementById('styling').value = defaultVaules[0]
-                document.getElementById('openTermsInCustomLightbox').checked = eval(defaultVaules[1])
-                document.getElementById('radio2').checked = defaultVaules[2]
-                document.getElementById('promoCodeSize').value = defaultVaules[3]
-                
+                tempProps = defaultValues()
             break;
             case 'reset_btn':
                 let initialValues = Object.keys(jsonData.props).map(el=>jsonData.props[el])
