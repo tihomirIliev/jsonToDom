@@ -1,0 +1,32 @@
+body {
+  font-family: sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  vertical-align: middle;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #eee;
+}
+
+.controls{
+  margin:1%;
+  padding:1%;
+}
+#container{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}

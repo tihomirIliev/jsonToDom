@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <base href="/">
+</head>
+<link rel="stylesheet" href="/style.css" type="text/css" />
+
+
+
+<body>
+    <div id ="container">
+        <table>
+            <tbody>
+                <tr>
+                    <td class="description"></td>
+                    <td>
+                        <div class="dropdown">
+                            <select id = "styling">
+                                <option value="winner"> Winner </option>
+                                <option value="sunvegas"> SunVegas </option>
+                                <option value="wplay"> Wplay </option>
+                            </select>
+                            </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="description"></td>
+                    <td class="inputField"><input type="checkbox" id="openTermsInCustomLightbox"></td>
+                </tr>
+                <tr>
+                    <td class="description"></td>
+                    <td class="inputField" id="promoCodeDisplay">
+                          <input type="radio" id="radio1" name="radio_button" value="basic">
+                          <label for="radio1">Basic</label><br>
+                          <input type="radio" id="radio2" name="radio_button" value="advanced">
+                          <label for="radio2">Advanced</label><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="description"></td>
+                    <td class="inputField"><input type="text" value="5" id="promoCodeSize"></td>
+                </tr>
+        
+            </tbody>
+            </table>
+            <div class='controls'>
+                <button id='save_btn'>Save</button>
+                <button id='default_btn'>Default</button>
+                <button id='reset_btn'>Reset</button>
+            </div>
+        
+        
+    </div>
+    <script type="module" src="/source.js"></script>
+</body>
+</html>
